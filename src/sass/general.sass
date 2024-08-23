@@ -1,0 +1,527 @@
+@import components/mixins
+
+html
+    font-size: 0.7px
+    +media(2560)
+        font-size: 2px
+    +media(855)
+        font-size: 0.9px
+    +media(480)
+        font-size: 1px
+
+body
+    margin: 0
+    background: #f2f9fb
+.wrapper
+    max-width: 1300rem
+    margin: 0 auto
+    padding: 10rem
+
+.topline
+    width: 100%
+    box-shadow: -0.174rem 4.997rem 5rem rgba(0,0,0,0.05)
+    background: #fff
+    z-index: 5
+
+    .content
+        display: flex
+        justify-content: space-between
+        text-align: center
+        align-items: center
+        flex-direction: column
+        row-gap: 40rem
+        +media(740)
+            flex-direction: row
+
+    .leftside
+        .logo
+            transition: all .5s ease
+            +media(2560)
+                width: 160rem
+            &:hover img
+                margin-right: 30rem
+                animation: 0.1s linear logo infinite reverse
+            &:hover a
+                color: rgb(255,151, 36)
+            a
+                transition: all .5s ease
+                display: flex
+                align-items: center
+                font-size: 36rem
+                color: #3b5362
+                font-family: "Open Sans"
+                font-weight: bold
+                text-decoration: none
+            img
+                transition: all .5s ease
+                +media(2560)
+                    width: 160rem
+    .rigthside
+        display: flex
+        column-gap: 97rem
+        margin-bottom: 30rem
+        flex-direction: column-reverse
+        row-gap: 40rem
+        +media(740)
+            margin: 0
+        // flex-direction: column
+        // +media(740)
+        //     flex-direction: row
+        +media(445)
+            flex-direction: row
+
+        .menu
+            display: flex
+            column-gap: 49rem
+            align-items: center
+            flex-direction: column
+            +media(570)
+                flex-direction: row
+            a
+                font-size: 18rem
+                text-transform: uppercase
+                color: rgb(76, 119, 146)
+                font-weight: 700
+                font-family: "Open Sans"
+                text-align: center
+                text-decoration: none
+                &:hover
+                    animation: 4s linear link infinite reverse
+        .button
+            a
+                font-size: 18rem
+                text-transform: uppercase
+                color: #ffffff
+                font-weight: 700
+                font-family: "Open Sans"
+                text-align: center
+                text-decoration: none
+                padding: 13rem 27rem
+                border-radius: 10rem
+                background-color: #56c107
+                transition: all .5s ease
+                &:hover
+                    background-color: rgb(255,151, 36)
+.main-jspage
+    display: flex
+    flex-direction: column-reverse
+    +media(900)
+        flex-direction: row
+    .leftside
+        position: relative
+        background-image: linear-gradient(181deg, #bfe5f5 0%, #c6eee8 100%)
+        +media(900)
+            width: 50%
+        .left-content
+            position: relative
+            display: flex
+            justify-content: center
+            padding-top: 40rem
+            height: 590rem
+            +media(430)
+                height: 663rem
+            +media(1325)
+                height: 616rem
+            .molbert
+                position: absolute
+                bottom: 0
+                width: 97%
+                height: 85.5%
+                background: url(../img/molbert.png) no-repeat center
+                background-size: contain
+                margin-top: 3%
+                +media(345)
+                    width: 100%
+                    height: 87%
+
+            img
+                width: 60%
+            .canvas
+                position: absolute
+                bottom: 36%
+                left: 50%
+                transform: translate(-50%, 50%)
+                width: 0
+                height: 0
+                background: #fff
+                transition: ease .5s all
+
+    .rightside
+        padding: 5rem 49rem
+        display: flex
+        justify-content: center
+        text-align: center
+        +media(900)
+            text-align: left
+            justify-content: normal
+            padding: 10rem 49rem
+        +media(420)
+            padding: 25rem 49rem
+        form
+            padding: 25rem 25rem
+            background: #fff
+            box-shadow: 0 0 5rem rgba(0,0,0,0.05)
+            text-align: center
+            +media(900)
+                text-align: left
+            +media(420)
+                padding: 25rem 49rem
+            // +media(1157)
+            //     width: 578rem
+            #form-h2
+                margin: 30rem 0 20rem 0
+                color: #333333
+                font-size: 36rem
+                font-weight: 700
+                font-family: "Open Sans"
+            .div-width
+                display: flex
+                flex-direction: column
+                align-items: stretch
+                row-gap: 40rem
+                align-items: center
+
+                +media(1325)
+                    flex-direction: row
+                .inputsRadio
+                    display: flex
+                    column-gap: 19rem
+                    row-gap: 19rem
+                    flex-direction: column
+                    +media(430)
+                        flex-direction: row
+                input[type="radio"]
+                    position: absolute
+                    left: 0
+                    top: 13rem
+                    width: 35rem
+                    height: 22rem
+                    z-index: 4
+                    opacity: 0
+
+                .custom-radio
+                    position: relative
+                    padding: 6rem 8rem
+                    cursor: pointer
+                    font-family: "Open Sans"
+                    font-weight: 500
+                    font-size: 16rem
+                    border-radius: 5rem
+                    background-color: #f2f9fb
+                    border: 2rem solid #4c7792
+                    color: #4c7792
+                    width: 100%
+                    +media(1220)
+                        width: auto
+
+                input:checked + .custom-radio
+                    background: #4c7792
+                    border-color: #4c7792
+                    color: #fff
+            .block
+                margin-bottom: 37rem
+            .custom-width
+                display: none
+                column-gap: 19rem
+                flex-direction: column
+                align-items: flex-start
+                .inputs
+                    display: flex
+                    column-gap: 49rem
+                    .content-form
+                        .inputs-content
+                        .headers
+                            display: flex
+                        .inputs-content
+                            display: flex
+                        input
+                            padding: 10rem
+                            border-radius: 5rem
+                            background-color: #f2f9fb
+                            border: 2rem solid #4c7792
+                        .x
+                            position: relative
+                            padding: 18rem
+                            &:before
+                                content: "X"
+                                position: absolute
+                                right: 50%
+                                top: 50%
+                                color: #4c7792
+                                font-size: 13rem
+                                font-family: "Open Sans"
+                                font-weight: 500
+                                transform: translate(50%, 35%)
+                        h2
+                            margin-bottom: 6rem
+                            text-transform: lowercase
+
+                .button
+                    display: flex
+                    align-items: flex-end
+
+            #widthOn,
+            #countButton
+                border: none
+                border-radius: 10rem
+                background-color: #d6edfb
+                outline: none
+                font-size: 13rem
+                text-transform: uppercase
+                color: #4c7792
+                font-weight: 700
+                font-family: "Open Sans"
+                padding: 13rem 13rem
+                text-decoration: none
+                width: 100%
+                +media(1220)
+                    width: auto
+            #widthOn
+                margin-left: 17rem
+            .custom-width
+                .inputs
+                    h2
+                        font-size: 10rem
+                        color: #333
+                        font-weight: 500
+                        font-family: "Open Sans"
+            .additional-settings
+                .inputs
+                    display: flex
+                    flex-direction: column
+                    row-gap: 10rem
+
+                    .input
+                        display: flex
+                        justify-content: space-between
+                        flex-direction: column
+                        +media(820)
+                            flex-direction: row
+                        .left-content
+                            position: relative
+                            padding-top: 10rem
+                            display: flex
+
+                            input[type="checkbox"]
+                                position: absolute
+                                opacity: 0
+                                width: 100%
+                                height: 23rem
+                                z-index: 15
+                                cursor: pointer
+                            .custom-checkbox
+                                position: relative
+                                cursor: pointer
+                                &::before
+                                    content: ""
+                                    position: absolute
+                                    border-radius: 5rem
+                                    width: 25rem
+                                    height: 25rem
+                                    border-radius: 5rem
+                                    border: 2rem solid #4c7792
+                                    outline: none
+
+                            input[type="checkbox"]:checked + .custom-checkbox:after
+                                content: ""
+                                position: absolute
+                                left: 2rem
+                                top: 85%
+                                width: 19rem
+                                height: 8rem
+                                border-left: 2rem solid #4c7792
+                                border-bottom: 2reM solid #4c7792
+                                transform: rotate(-52deg) translate(50%, -50%)
+                                box-sizing: border-box
+                                z-index: 0
+                            span
+                                position: relative
+                                left: 48rem
+                                margin: 0
+                                color: #4c7792
+                                font-size: 16rem
+                                font-weight: 700
+                                font-family: "Open Sans"
+                                text-transform: lowercase
+                        .right-content
+                            p
+                                margin: 0
+                                color: #333333
+                                font-size: 16rem
+                                font-weight: 500
+                                font-family: "Open Sans"
+                                text-align: center
+            .submitHr
+                margin: 40rem 0
+            .submit
+                display: flex
+                justify-content: space-between
+                padding: 0 20rem 0 0
+                border-radius: 10rem
+                flex-direction: column-reverse
+                +media(1340)
+                    flex-direction: row
+                    background: #eaf6fd
+                .left
+                    input
+                        padding: 7rem 35rem
+                        height: 100%
+                        color: #fff
+                        border-radius: 10rem
+                        border: none
+                        background-color: #56c107
+                        font-size: 18rem
+                        font-weight: 700
+                        font-family: "Open Sans"
+                        text-decoration: none
+                        text-transform: uppercase
+                        transition: all .5s ease
+                        outline: none
+                        width: 100%
+                        +media(1340)
+                            width: auto
+                            padding: 0 35rem
+
+                        &:hover
+                            background-color: rgb(255,151, 36)
+                .rigth
+                    display: flex
+                    align-items: center
+                    column-gap: 27rem
+                    flex-direction: flex-end
+                    +media(1340)
+                        flex-direction: row
+                    h2
+                        margin: 0
+                        color: #333333
+                        font-size: 15rem
+                        text-transform: uppercase
+                        font-weight: 700
+                        font-family: "Open Sans"
+                    .green-text
+                        margin: 0
+                        color: #56c107
+                        font-size: 24rem
+                        font-weight: 500
+                        font-family: "Open Sans"
+                        text-align: center
+                        strong
+                            font-size: 48rem
+                            margin-right: 16rem
+#diysniyNomerTelephona
+    display: none
+    color: red
+    font-size: 14rem
+    font-weight: 500
+    font-family: "Open Sans"
+    text-align: center
+    margin: 3rem 0 0 0
+footer
+    width: 100%
+    background: #333
+    p
+        padding: 20rem
+        margin: 0
+        color: #d6edfb
+        font-size: 18rem
+        font-weight: 500
+        font-family: "Open Sans"
+        text-align: center
+
+.error
+    p
+        display: none
+        color: red
+        font-size: 14rem
+        font-weight: 500
+        font-family: "Open Sans"
+        text-align: center
+        margin: 3rem 0 0 0
+
+.popup
+    position: fixed
+    top: 50%
+    left: 50%
+    display: none // flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 320rem
+    background: grey
+    transform: translate(-50%, -50%)
+    +media(600)
+        width: 320rem
+    .number
+        .first
+            display: flex
+            button
+                position: absolute
+                top: 0
+                right: 0
+                font-size: 40rem
+                font-family: "Open Sans"
+                border: none
+                background-color: #d6edfb
+                outline: 0
+                text-transform: uppercase
+                color: #4c7792
+
+            input[type="text"]
+                padding: 6rem 8rem
+                cursor: pointer
+                font-family: "Open Sans"
+                font-weight: 500
+                font-size: 16rem
+                border-radius: 5rem
+                background-color: #f2f9fb
+                border: 2rem solid #4c7792
+                color: #4c7792
+                width: 100%
+            input[type="submit"]
+                border: none
+                border-radius: 10rem
+                background-color: #d6edfb
+                outline: 0
+                font-size: 13rem
+                text-transform: uppercase
+                color: #4c7792
+                font-weight: 700
+                font-family: "Open Sans"
+                padding: 13rem 13rem
+                text-decoration: none
+@keyframes link
+    0%
+        color: rgb(76, 119, 146)
+    25%
+        color: rgb(255,151, 36)
+    50%
+        color: rgb(86 193 7)
+    75%
+        color: rgb(230 239 242)
+    100%
+        color: rgb(66, 175, 255)
+@keyframes logo
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(-360deg)
+
+@font-face
+    font-family: 'Open Sans'
+    src: url('../fonts/OpenSans-Extrabold.woff2') format('woff2'), url('../fonts/OpenSans-Extrabold.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Open Sans'
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+@font-face
+    font-family: 'Open Sans'
+    src: url('../fonts/OpenSans-Medium.woff2') format('woff2'), url('../fonts/OpenSans-Medium.woff') format('woff')
+    font-weight: 500
+    font-style: normal
+    font-display: swap

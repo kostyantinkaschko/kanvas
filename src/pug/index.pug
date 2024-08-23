@@ -1,0 +1,121 @@
+include components/mixins
+
+doctype html
+html(lang="uk")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="css/style.css")
+    link(rel="shortcut icon" href="img/logo.png" type="image/x-icon")
+    title Kanvas
+  body.body
+    header 
+      .topline
+        .wrapper.content  
+          .leftside 
+            .logo 
+              a(href="index.html") 
+                img(src="img/logo.png" alt="Нє, мені впадлу робити СЕО, кому воно треба? Це ж не сайт якого будуть на продакшн пускати.") 
+                | Kanvas
+          .rigthside 
+            .menu 
+              a(href="#") Галерея
+              a(href="#") Про нас  
+            .button 
+              a(href="tel:+3809629832") Замовити дзвінок
+    main.main-jspage
+      .leftside 
+        .left-content#molbert
+          .molbert 
+          .canvas#canvas 
+      .rightside#rightside 
+        form(action="#") 
+          .block#block
+            h2#form-h2 Виберіть розмір
+            .div-width
+              .inputsRadio
+                input(type="radio" onclick="changeSize(30, 30)" id="size1" name="width" value="30x30" step="10"  checked required)
+                label.custom-radio(for="size1")
+                  span.checkmark
+                  | 30x30
+                input(type="radio" onclick="changeSize(30, 90)" id="size2" name="width" value="30x90" required)
+                label.custom-radio(for="size2")
+                  span.checkmark
+                  | 30x90
+
+                input(type="radio" onclick="changeSize(90, 120)" id="size3" name="width" value="90x120" required)
+                label.custom-radio(for="size3")
+                  span.checkmark
+                  | 90x120
+
+                input(type="radio" onclick="changeSize(90, 150)" id="size4" name="width" value="90x150" required)
+                label.custom-radio(for="size4")
+                  span.checkmark
+                  | 90x150
+              .hyperlinkButton
+                a#widthOn(onclick="customWidth()" href="#") Задати розмір
+            .custom-width#customWidth 
+              .inputs
+                .content-form
+                  .inputs-content  
+                    .width-input
+                      h2 Ширина
+                      input(type="number" step="10" id="customWidthInput" min="30" max="90")
+                    .x
+                    .height
+                      h2 Висота
+                      input(type="number" step="10" id="customHeightInput" min="30" max="150")
+                .button 
+                  a#countButton(href="#" onclick="changeSize()") підрахувати
+              .error 
+                p#kratneTen Число має бути кратне 10!
+                p#povnaForma Заповніть форму!
+                p#limitPoNumbers Число має бути більше за 30!
+
+          hr
+          .additional-settings
+            h2#form-h2  Додаткові опції
+            .inputs 
+              .input 
+                .left-content  
+                  .inputCheckbox
+                    input(type="checkbox" onclick="updatePrice(adjustedWidth, adjustedHeight)" name="expensive-canvas" value="true")
+                    label.custom-checkbox
+                      span Дорожче полотно
+                .right-content 
+                  p +35 грн
+              .input 
+                .left-content 
+                  input(type="checkbox" name="frame" onclick="updatePrice(adjustedWidth, adjustedHeight)")
+                  label.custom-checkbox
+                    span З рамкою
+                .right-content
+                  p +10 грн 
+              .input 
+                .left-content
+                  input(type="checkbox" onclick="updatePrice(adjustedWidth, adjustedHeight)" name="nova-poshta")
+                  label.custom-checkbox
+                    span Доставка (Нова Пошта)
+                .right-content
+                  p +40 грн 
+          hr.submitHr
+          .submit 
+            .left 
+              input(type="button" value="Придбати" onclick="numberOfPopup()")#buy
+            .rigth#rigth
+              h2 Загальна сума: 
+              p.green-text 
+                strong#totalPrice 0
+                | грн
+          .popup#popup
+            .number
+              .first 
+                button(onclick="numberOfPopup()") x
+                input(type="number" id="numberOfTelephone" name="number" placeholder="Номер телефона") 
+                input(type="submit" onclick="send()")
+              .error
+              p#diysniyNomerTelephona Введіть дійсний номер телефона!
+    footer 
+      p &copy; Kanvas. Всі права захищені
+    script(src="js/scripts.js")
